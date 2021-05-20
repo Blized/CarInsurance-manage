@@ -5,7 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.bdqn</groupId>
     <artifactId>CarInsurance-manage</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>cloud-api</module>
+    </modules>
 
     <!--规定springcloud和springBoot的版本-->
     <dependencyManagement>
@@ -36,7 +40,6 @@
     </dependencyManagement>
     <!--通用坐标-->
     <dependencies>
-        <!--跨服务器文件上传，引入jersey的相关坐标-->
         <!--跨服务器文件上传，引入jersey的相关坐标-->
         <dependency>
             <groupId>com.sun.jersey</groupId>
