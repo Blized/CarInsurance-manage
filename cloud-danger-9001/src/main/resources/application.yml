@@ -1,11 +1,11 @@
 #服务端口
 server:
-  port: 8201
+  port: 9001
 
 #注册中心配置
 spring:
   application:
-    name: cloud-claims
+    name: cloud-system
   cloud:
     consul:
       host: localhost
