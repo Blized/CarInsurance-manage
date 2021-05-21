@@ -6,7 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cloud-danger-9001" />
+        <module name="cloud-policy-8001" />
+        <module name="cloud-system-5001" />
         <module name="cloud-api" />
+        <module name="cloud-user-6001" />
+        <module name="cloud-claims-8201" />
+        <module name="cloud-client-7001" />
+        <module name="cloud-assessment-8101" />
       </profile>
     </annotationProcessing>
   </component>

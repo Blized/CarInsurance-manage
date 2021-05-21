@@ -1,0 +1,25 @@
+#服务端口
+server:
+  port: 7001
+
+#注册中心配置
+spring:
+  application:
+    name: cloud-client
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        #在consul对外暴露的服务器名称
+        service-name: ${spring.application.name}
+        #主机名称
+        hostname: 127.0.0.1
+        #是否注册到注册中心
+        register: true
+
+  # mybatis相关配置
+  datasource:
+    url: jdbc:mysql:///数据库名?serverTimezone=GMT&characterEncoding=utf-8
+    username:
+    password:
