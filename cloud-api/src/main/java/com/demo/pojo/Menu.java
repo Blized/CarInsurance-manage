@@ -2,6 +2,8 @@ package com.demo.pojo;
 
 import lombok.*;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -22,4 +24,8 @@ public class Menu {
      * 菜单链接地址
      */
     private String linkto;
+    /**
+     * 子菜单
+     */
+    private List<Menu> children;
 }
