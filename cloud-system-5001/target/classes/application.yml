@@ -1,11 +1,11 @@
 #服务端口
 server:
-  port: 6001
+  port: 5001
 
 #注册中心配置
 spring:
   application:
-    name: cloud-user
+    name: cloud-system
   cloud:
     consul:
       host: localhost
