@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.PolicyMapper">
+
+    <resultMap id="selectAll" type="com.demo.pojo.Warranty_info">
+        <id property="warrantyId" column="warrantyId"/>
+        <result property="licenseId" column="licenseId"/>
+        <result property="insuranceBeginTime" column="insuranceBeginTime"/>
+        <result property="insuranceEndTime" column="insuranceEndTime"/>
+        <result property="premiumTotal" column="premiumTotal"/>
+        <result property="warrantyType" column="warrantyType"/>
+        <result property="warrantyState" column="warrantyState"/>
+        <collection property="recognizee_info" ofType="com.demo.pojo.Recognizee_info">
+            <result property="recognizeeName" column="recognizeeName"/>
+        </collection>
+        <collection property="insured_car_info" ofType="com.demo.pojo.Insured_car_info">
+            <result property="frameId" column="frameId"/>
+            <result property="makeId" column="makeId"/>
+        </collection>
+        <collection property="risk_type_info" ofType="com.demo.pojo.Risk_type_info">
+            <result property="riskTypeNameName" column="riskTypeName"/>
+        </collection>
+        <collection property="risk_type_amount_info" ofType="com.demo.pojo.Risk_type_amount_info">
+            <result property="premium" column="premium"/>
+        </collection>
+        <collection property="claim_main_info" ofType="com.demo.pojo.Claim_main_info">
+            <result property="caseReportId" column="caseReportId"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="selectWarrantyAll" resultMap="selectAll">
+        select warranty_info.warrantyId ,
+                recognizee_info.recognizeeName,
+                insured_car_info.frameId,
+                warranty_info.licenseId,
+                makeId ,
+                risk_type_info.riskTypeName ,
+                insuranceBeginTime ,
+                insuranceEndTime ,
+                risk_type_amount_info.premium ,
+                premiumTotal ,
+                warrantyType ,
+                warrantyState ,
+                caseReportId
+        from warranty_info
+                     left join policyholders_info on warranty_info.policyholdersId=policyholders_info.policyholdersId
+                     left join insured_car_info on warranty_info.licenseId=insured_car_info.licenseId
+                     left join recognizee_info on warranty_info.recognizeeId=recognizee_info.recognizeeId
+                     left join insure_risk_info on warranty_info.warrantyId=insure_risk_info.warrantyId
+                     left join risk_type_amount_info on insure_risk_info.insured_amount_id=risk_type_amount_info.insured_amount_id
+                     left join claim_main_info on claim_main_info.warrantyId=warranty_info.warrantyId
+                     left join risk_type_info on risk_type_info.riskTypeId=insure_risk_info.riskTypeId
+                     ORDER BY warranty_info.warrantyId
+    </select>
+
+    <insert id="insertWarranty">
+        insert into warranty_info VALUES
+                (#{warrantyId},#{policyholdersId},#{recognizeeId},#{licenseId},#{permissionTime},
+                 #{warrantyType},#{warrantyState},#{paymentTime},#{premiumTotal},#{insuranceBeginTime},#{insuranceEndTime});
+    </insert>
+
+<!--    删除保单信息即修改保单状态-->
+    <update id="deleteWarranty">
+        update warranty_info set warrantyState=2 where warranty_info.warrantyId=#{wNo}
+    </update>
+
+    <update id="updateWarranty">
+        update warranty_info
+        set policyholdersId=#{policyholdersId},recognizeeId=#{recognizeeId},licenseId=#{licenseId},
+            permissionTime= #{permissionTime},warrantyType= #{warrantyType},warrantyState= #{warrantyState},
+            paymentTime= #{paymentTime},premiumTotal= #{premiumTotal},insuranceBeginTime= #{insuranceBeginTime},
+            insuranceEndTime= #{insuranceEndTime}
+        where warranty_info.warrantyId=#{warrantyId}
+    </update>
+</mapper>
