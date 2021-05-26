@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.AssessmentMapper">
+    <resultMap type="Survey_loss_info" id="survey1">
+        <!--  其它列使用result映射 -->
+        <result property="surveyLossId" column="surveyLossId"/>
+        <result property="jobint" column="jobint"/>
+        <result property="surveystatus" column="surveystatus"/>
+        <result property="prospectDisposeIdea" column="prospectDisposeIdea"/>
+        <result property="disposeType" column="disposeType"/>
+        <result property="lossInfo" column="lossInfo"/>
+        <result property="duty" column="duty"/>
+        <result property="dutyRatio" column="dutyRatio"/>
+        <result property="maintenancePoint" column="maintenancePoint"/>
+        <result property="shengstatus" column="shengstatus"/>
+        <collection property="ca" ofType="Case_report_info">
+            <result property="driverCard" column="driverCard"/>
+            <result property="dangerCause" column="dangerCause"/>
+        </collection>
+        <collection property="c" ofType="Claim_main_info">
+            <result property="closeCaseTime" column="closeCaseTime"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectAllsurveyInfo" resultType="Survey_loss_info">
+        select s.surveyLossId,s.jobint,s.claimMainId,s.surveystatus,s.prospectDisposeIdea,s.disposeType,s.lossInfo,s.duty,s.dutyRatio,s.maintenancePoint,s.shengstatus,ca.driverCard,ca.dangerCause,c.closeCaseTime from survey_loss_info s LEFT JOIN claim_main_info c on s.claimMainId=c.claimMainId LEFT JOIN case_report_info ca on ca.caseReportId=c.caseReportId;
+    </select>
+</mapper>

@@ -30,10 +30,7 @@ public class Case_report_info {
      * 出险所在详细地址
      */
     private String fullAddress;
-    /**
-     * 出险经过
-     */
-    private String dangerPass;
+
     /**
      * 出险原因
      */

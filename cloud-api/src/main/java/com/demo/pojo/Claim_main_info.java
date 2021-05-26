@@ -34,5 +34,5 @@ public class Claim_main_info {
     /**
      * 赔案主状态（1.已报案 2已立案 3已结案 4已撤案）
      */
-    private int claimStatus;
+    private String claimStatus;
 }

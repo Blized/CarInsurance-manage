@@ -1,6 +1,9 @@
 #服务端口
 server:
   port: 8101
+mybatis:
+  type-aliases-package: com.demo.pojo
+  mapper-locations: classpath:/mapper/*.xml
 
 #注册中心配置
 spring:
@@ -18,8 +21,12 @@ spring:
         #是否注册到注册中心
         register: true
 
-# mybatis相关配置
- datasource:
-   url: jdbc:mysql:///carInsuranceDB?serverTimezone=GMT&characterEncoding=utf-8
-   username:
-   password:
+# mysql相关配置
+  datasource:
+    url: jdbc:mysql://192.168.43.189/carInsuranceDB?serverTimezone=GMT&characterEncoding=utf-8
+    username: ws
+    password: 123
+
+
+
+

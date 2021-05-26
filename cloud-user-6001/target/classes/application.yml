@@ -20,6 +20,6 @@ spring:
 
   # mybatis相关配置
   datasource:
-    url: jdbc:mysql:///carInsuranceDB?serverTimezone=GMT&characterEncoding=utf-8
-    username: root
-    password:
+    url: jdbc:mysql://192.168.43.189/carInsuranceDB?serverTimezone=GMT&characterEncoding=utf-8
+    username: ws
+    password: 123
