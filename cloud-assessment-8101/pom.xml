@@ -43,6 +43,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
+        <!--springboot devtools热部署坐标-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <!--如果有继承，子项目将不继承坐标-->
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>com.bdqn</groupId>
             <artifactId>cloud-api</artifactId>
@@ -50,4 +58,25 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                    <!-- 如果没有该配置，devtools不会生效。
+                         在maven编译的时候新创建一个虚拟机执行。
+                         这个新创建 JVM 就是这里的 fork。它速度会稍慢一些，但是隔离性非常好。-->
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

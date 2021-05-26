@@ -1,6 +1,7 @@
 package com.demo.service.Impl;
 
 import com.demo.mapper.AssessmentMapper;
+import com.demo.pojo.Case_report_info;
 import com.demo.pojo.Survey_loss_info;
 import com.demo.service.AssessmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,15 @@ public class AssessmentServiceImpl implements AssessmentService {
     public List<Survey_loss_info> getallsurveyInfo() {
         List<Survey_loss_info> survey_loss_infos=mapper.selectAllsurveyInfo();
         return survey_loss_infos;
+    }
+
+    @Override
+    public List<Case_report_info> getallcaseinfo() {
+        return mapper.selectAllcaseInfo();
+    }
+
+    @Override
+    public Case_report_info getcaseinfoByid(String caseReportId) {
+        return mapper.selectcaseinfoByid(caseReportId);
     }
 }

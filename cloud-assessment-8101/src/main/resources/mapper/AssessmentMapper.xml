@@ -16,6 +16,7 @@
         <result property="maintenancePoint" column="maintenancePoint"/>
         <result property="shengstatus" column="shengstatus"/>
         <collection property="ca" ofType="Case_report_info">
+            <result property="caseReportId" column="caseReportId"/>
             <result property="driverCard" column="driverCard"/>
             <result property="dangerCause" column="dangerCause"/>
         </collection>

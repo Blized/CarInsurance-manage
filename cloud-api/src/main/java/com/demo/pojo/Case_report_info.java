@@ -62,5 +62,5 @@ public class Case_report_info {
     /**
      * 案件状态（1.已报案 2已立案(已派人勘察) 3已结案）
      */
-    private int caseState;
+    private String caseState;
 }
