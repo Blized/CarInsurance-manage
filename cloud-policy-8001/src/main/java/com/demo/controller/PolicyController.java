@@ -1,5 +1,6 @@
 package com.demo.controller;
 
+import com.demo.pojo.Policyholders_info;
 import com.demo.pojo.Warranty_info;
 import com.demo.service.PolicyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import java.util.List;
 public class PolicyController {
     @Autowired
     PolicyService policyService;
+
 
     /**
      * 查询全部保单信息
@@ -50,7 +52,7 @@ public class PolicyController {
         return policyService.deleteWarranty(wNo);
     }
 
-    /**
+    /**·
      * 修改保单信息
      * @param warrantyInfo 保单对象
      * @return 修改结果
@@ -60,5 +62,8 @@ public class PolicyController {
         return policyService.updateWarranty(warrantyInfo);
     }
 
-
+    @RequestMapping("/addClient")
+    public int addClient(Policyholders_info policyholders_info){
+        return 1;
+    }
 }

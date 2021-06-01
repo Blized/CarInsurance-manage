@@ -12,6 +12,9 @@
         <result property="premiumTotal" column="premiumTotal"/>
         <result property="warrantyType" column="warrantyType"/>
         <result property="warrantyState" column="warrantyState"/>
+        <result property="paymentTime" column="paymentTime"/>
+        <result property="permissionTime" column="permissionTime"/>
+
         <collection property="recognizee_info" ofType="com.demo.pojo.Recognizee_info">
             <result property="recognizeeName" column="recognizeeName"/>
         </collection>
@@ -28,11 +31,15 @@
         <collection property="claim_main_info" ofType="com.demo.pojo.Claim_main_info">
             <result property="caseReportId" column="caseReportId"/>
         </collection>
+        <collection property="policyholders_info" ofType="com.demo.pojo.Policyholders_info">
+            <result property="policyholdersName" column="policyholdersName"/>
+        </collection>
     </resultMap>
 
 
     <select id="selectWarrantyAll" resultMap="selectAll">
         select warranty_info.warrantyId ,
+               policyholders_info.policyholdersName,
                 recognizee_info.recognizeeName,
                 insured_car_info.frameId,
                 warranty_info.licenseId,
@@ -42,6 +49,8 @@
                 insuranceEndTime ,
                 risk_type_amount_info.premium ,
                 premiumTotal ,
+               paymentTime,
+               permissionTime,
                 warrantyType ,
                 warrantyState ,
                 caseReportId
