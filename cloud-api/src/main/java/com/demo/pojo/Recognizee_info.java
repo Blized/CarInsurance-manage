@@ -22,13 +22,17 @@ public class Recognizee_info {
      */
     private String sex;
     /**
+     * 投保人编号
+     */
+    private int policyholdersId;
+    /**
      * 证件类型
      */
     private String credentialsType;
     /**
      * 证件号码
      */
-    private String credenId;
+    private String credentialsId;
     /**
      * 联系电话
      */

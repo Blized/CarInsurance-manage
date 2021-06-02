@@ -62,5 +62,21 @@ public class Case_report_info {
     /**
      * 案件状态（1.已报案 2已立案(已派人勘察) 3已结案）
      */
-    private String caseState;
+    private int caseState;
+    /*
+    * 被保人编号
+    * */
+    private int recognizeeId;
+    /*
+    * 保单号
+    * */
+    private String warrantyId;
+    /*
+    *被保人
+    * */
+    private String recognizeeName;
+    /*
+    * 被保人电话
+    * */
+    private String telephone;
 }
