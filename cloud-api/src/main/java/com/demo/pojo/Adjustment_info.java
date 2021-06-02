@@ -21,7 +21,7 @@ public class Adjustment_info {
     /**
      * 事故责任比率
      */
-    private String StringaccidentLiabilityRatio;
+    private String accidentLiabilityRatio;
     /**
      * 车损失金额
      */

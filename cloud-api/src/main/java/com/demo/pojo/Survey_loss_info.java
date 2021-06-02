@@ -55,6 +55,22 @@ public class Survey_loss_info {
      */
     private String maintenancePoint;
     /**
+     * 驾驶证
+     */
+    private String drivingLicence;
+    /**
+     * 行驶证
+     */
+    private String vehicleLicence;
+    /**
+     * 车架号
+     */
+    private String carframeId;
+    /**
+     * 发动机号
+     */
+    private String engine_number;
+    /**
      * 联系电话
      */
     private String telphone;
