@@ -21,7 +21,7 @@ public class Adjustment_info {
     /**
      * 事故责任比率
      */
-    private String accidentLiabilityRatio;
+    private double accidentLiabilityRatio;
     /**
      * 车损失金额
      */
@@ -35,29 +35,21 @@ public class Adjustment_info {
      */
     private double peopleFeeTotal;
     /**
-     * 赔偿限额
+     * 三者损失金额
      */
-    private double indemnityLimit;
+    private double trdPartyLiability;
     /**
-     * 费用赔付总金额
-     */
-    private double costSettlement;
-    /**
-     * 损失赔付总金额
-     */
-    private double lossSettlement;
-    /**
-     * 赔付总金额
+     * 损失总金额
      */
     private double settlementTotal;
+    /**
+     * 应赔付金额
+     */
+    private double shouldMoney;
     /**
      * 已预付费用金额
      */
     private double prepayMoney;
-    /**
-     * 已预付损失金额
-     */
-    private double prepayLossMoney;
     /**
      * 理算日志
      */

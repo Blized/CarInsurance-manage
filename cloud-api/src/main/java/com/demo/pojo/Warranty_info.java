@@ -18,10 +18,12 @@ public class Warranty_info {
      * 投保人
      */
     private int policyholdersId;
+    private String policyholdersName;
     /**
      * 被保人
      */
     private int recognizeeId;
+    private String recognizeeName;
     /**
      * 被保车牌号
      */

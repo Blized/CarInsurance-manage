@@ -36,4 +36,8 @@ public class Car_damage_info {
      * 定损费用小计
      */
     private double lossTotal;
+    /**
+     * 是否为第三方责任人
+     */
+    private String IsTrdPartyLiability;
 }

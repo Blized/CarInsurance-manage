@@ -15,6 +15,10 @@ public class Risk_type_amount_info {
      */
     private int insured_amount_id;
     /**
+     * 保单编号
+     */
+    private String warrantyId;
+    /**
      * 投保金额/责任限额信息
      */
     private String insured_amount;
@@ -23,7 +27,15 @@ public class Risk_type_amount_info {
      */
     private int riskTypeId;
     /**
+     * 保额上限
+     */
+    private double insuredAmount;
+    /**
      * 保险费
      */
     private double premium;
+    /**
+     * 不计免赔
+     */
+    private int insuredState;
 }
